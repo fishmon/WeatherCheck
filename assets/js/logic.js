@@ -71,3 +71,16 @@ document.addEventListener('DOMContentLoaded', function () {
           console.error('Error fetching weather data:', error);
         }
       }
+      // Function to display current weather information
+    function displayCurrentWeather(data) {
+        // Show the weather card
+        todayWeatherCard.classList.remove('d-none');
+    
+        // Update elements with current weather data
+        document.getElementById('city-name').textContent = data.name;
+        document.getElementById('current-pic').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        document.getElementById('temperature').textContent = `Temperature: ${data.main.temp} °C`;
+        document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
+        document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind.speed} m/s`;
+        document.getElementById('UV-index').textContent = `UV Index: N/A`; // You may need to fetch UV index separately
+      }
