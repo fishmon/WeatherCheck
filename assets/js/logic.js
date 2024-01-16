@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // Update elements with current weather data
       document.getElementById('city-name').textContent = data.name;
-      document.getElementById('current-pic').src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+      document.getElementById('current-pic').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
       document.getElementById('temperature').textContent = `Temperature: ${data.main.temp} °C`;
       document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
       document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind.speed} m/s`;
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         card.className = 'col-md-2 forecast bg-primary text-white m-2 rounded';
         card.innerHTML = `
           <p>Date: ${formatDate(entry.dt)}</p>
-          <p><img src="http://openweathermap.org/img/wn/${entry.weather[0].icon}.png" /></p>
+          <p><img src="https://openweathermap.org/img/wn/${entry.weather[0].icon}.png" /></p>
           <p>Temp: ${entry.main.temp} °C</p>
           <p>Wind: ${entry.wind.speed} m/s</p>
           <p>Humidity: ${entry.main.humidity}%</p>
