@@ -33,4 +33,33 @@
                 <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
                 <form id="history"></form>
             </div>
-           
+            <div class="col-lg-9">
+                <div class="row mr-0">
+                    <div class="col-lg-11 card ml-2 d-none" id="today-weather">
+                        <div class="card-body">
+                            <h3 id="city-name" class="city-name align-middle"></h3>
+                            <img id="current-pic" alt="">
+                            <p id="temperature"></p>
+                            <p id="humidity"></p>
+                            <p id="wind-speed"></p>
+                            <p id="UV-index"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-none" id="fiveday-header">
+                    <div class="col-12">
+                        <h3><span>5-Day Forecast</span></h3>
+                    </div>
+                </div>
+                <div class="row" id="five-day-forecast">
+                    <!-- Forecast cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/logic.js"></script>
+</body>
+
+</html>
