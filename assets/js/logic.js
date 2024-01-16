@@ -84,3 +84,28 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind.speed} m/s`;
         document.getElementById('UV-index').textContent = `UV Index: N/A`; // You may need to fetch UV index separately
       }
+       // Function to display 5-day forecast
+    function displayFiveDayForecast(data) {
+        // Clear previous forecast data
+        fiveDayForecastContainer.innerHTML = '';
+    
+        // Filter forecast entries for 12:00:00 time
+        const forecastEntries = data.list.filter(entry => entry.dt_txt.includes('12:00:00'));
+    
+        // Create forecast cards
+        forecastEntries.forEach(entry => {
+          const card = document.createElement('div');
+          card.className = 'col-md-2 forecast bg-primary text-white m-2 rounded';
+          card.innerHTML = `
+            <p>Date: ${formatDate(entry.dt)}</p>
+            <p><img src="http://openweathermap.org/img/wn/${entry.weather[0].icon}.png" /></p>
+            <p>Temp: ${entry.main.temp} °C</p>
+            <p>Wind: ${entry.wind.speed} m/s</p>
+            <p>Humidity: ${entry.main.humidity}%</p>
+          `;
+          fiveDayForecastContainer.appendChild(card);
+        });
+    
+        // Show the 5-day forecast header
+        document.getElementById('fiveday-header').classList.remove('d-none');
+      }
