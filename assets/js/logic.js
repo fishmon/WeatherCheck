@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       clearSearchHistory();
     });
   
-    // Function to fetch weather data for London on page load
+    // Function to fetch weather data for default London on page load
     function getDefaultWeather() {
-      // You can change 'London' to any default city you prefer
       getWeatherData('London');
     }
   
